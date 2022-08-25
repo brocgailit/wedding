@@ -12,7 +12,7 @@ type PathProps = { locale: string }
 export const getStaticProps = async ({ locale } : PathProps) => ({
   props: {
     ...await serverSideTranslations(locale, ['common']),
-    weddingDate: new Date().toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' })
+    weddingDate: new Date('2022-10-08').toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' })
   },
 })
 
