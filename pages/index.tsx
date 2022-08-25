@@ -34,7 +34,7 @@ function Home({ weddingDate } : InferGetStaticPropsType<typeof getStaticProps>) 
         <h1 className={styles.title}>
           {t('brideAndGroom')}
         </h1>
-        <h2>
+        <h2 className={styles.subtitle}>
           {weddingDate}
         </h2>
       </main>
