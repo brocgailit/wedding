@@ -62,7 +62,7 @@ function Home({ weddingDate, rsvpDeadline } : InferGetStaticPropsType<typeof get
           author="Imants Ziedonis"
           source="Motocikls (1965)"
         >
-          <p>Ar tevi kopā ik vietu es saucu par savām mājām</p>
+          <p>{t('quote')}</p>
         </Quote>
         
       </main>
