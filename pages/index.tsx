@@ -61,7 +61,7 @@ function Home({ weddingDate, rsvpDeadline } : InferGetStaticPropsType<typeof get
         <Quote
           url="https://www.literatura.lv/en/work/Motocikls/408336"
           author="Imants Ziedonis"
-          source="Motocikls"
+          source="Motocikls (1965)"
         >
           <p>Ar tevi kopā ik vietu es saucu par savām mājām</p>
         </Quote>

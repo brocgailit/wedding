@@ -4,11 +4,18 @@
 
 .quote figure {
     max-width: var(--container-size-large);
+    width: fit-content;
+    padding: 4em var(--container-padding);
     margin: 0 auto;
-    padding: var(--container-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
 }
 
 .quote blockquote {
+    position: relative;
+    display: inline-block;
     margin: 0;
     text-align: center;
     font-size: 3em;
@@ -16,8 +23,15 @@
     font-family: var(--font-family-heading);
 }
 
+.quote blockquote * {
+    margin: 0;
+}
+
 .quote figcaption {
+    color: var(--color-grey);
     text-align: right;
+    align-self: flex-end;
+    /* margin-top: -0.5em */
 }
 
 .quote figcaption > * {
@@ -25,7 +39,7 @@
 }
 
 .author {
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 .author::before {
     content: '—';
