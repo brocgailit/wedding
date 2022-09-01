@@ -15,7 +15,7 @@ type HeroProps = Partial<{
     }
 }
 
-const Hero = ({ background, children, backgroundColor = 'light', color = 'black' }: HeroProps) => {
+const Hero = ({ background, children, backgroundColor = 'foreground', color = 'white' }: HeroProps) => {
     const style = {
         '--hero-color-background': `var(--color-${backgroundColor})`,
         '--hero-color-foreground': `var(--color-${color})`

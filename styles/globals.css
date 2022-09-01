@@ -2,15 +2,16 @@
   --font-family-heading: 'Mea Culpa', cursive;
   --font-family-subheading: 'Aboreto', cursive;
 
-  --color-foreground: var(--color-black);
-  --color-background: var(--color-white);
-
-  --color-light: #eedbcd;
-  --color-grey: #909987;
-  --color-dark: #624f3b;
-
-  --color-black: #231f1a;
   --color-white: #f9f6f4;
+  --color-black: #231f1a;
+
+  --color-foreground: var(--color-black);
+  --color-foreground-muted: #624f3b;
+
+  --color-background: var(--color-white);
+  --color-background-muted: #e9dfd8;
+
+  --color-grey: #676d61;
 
   --color-primary: #2f765d;
   --color-secondary: #85122a;
@@ -32,6 +33,11 @@ body {
   color: var(--color-foreground);
   background-color: var(--color-background);
   background-image: url('/images/paper-texture.webp');
+}
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -62,7 +68,16 @@ a {
     color-scheme: dark;
   }
   body {
-    --color-foreground: var(--color-white);
-    --color-background: var(--color-black);
+  --color-background: #231f1a;
+  --color-background-muted: #362c21;
+
+  --color-foreground: #f9f6f4;
+  --color-foreground-muted: #eedbcd;
+
+  --color-grey: #abb3a4;
+
+  /* --color-primary: #2f765d;
+  --color-secondary: #85122a;
+  --color-tertiary: #e2b2a0; */
   }
 }

@@ -7,17 +7,25 @@ import { useTranslation } from 'next-i18next'
 import Hero from '../components/Hero'
 import Button from '../components/Button'
 import Quote from '../components/Quote'
+import Itinerary from '../components/Itinerary'
+import { server } from '../config';
+
 
 type PathProps = { locale: string }
 
-export const getStaticProps = async ({ locale } : PathProps) => ({
-  props: {
-    ...await serverSideTranslations(locale, ['common']),
-    weddingDate: new Date('2022-10-08').toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' })
-  },
-})
+export const getStaticProps = async ({ locale } : PathProps) => {
+  const itinerary = await fetch(`${server}/locales/${locale}/itinerary.json`).then(res => res.json()); 
 
-function Home({ weddingDate, rsvpDeadline } : InferGetStaticPropsType<typeof getStaticProps>) {
+  return {
+    props: {
+      ...await serverSideTranslations(locale, ['common']),
+      weddingDate: new Date('2022-10-08').toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' }),
+      itinerary
+    }
+  }
+};
+
+function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getStaticProps>) {
 
   const { locale } = useRouter();
 
@@ -35,7 +43,6 @@ function Home({ weddingDate, rsvpDeadline } : InferGetStaticPropsType<typeof get
         <Hero
           background="/images/sigulda-castle.jpg"
           backgroundColor="tertiary"
-          color="white"
         >
           {{
             heading: t('brideAndGroom'),
@@ -64,6 +71,8 @@ function Home({ weddingDate, rsvpDeadline } : InferGetStaticPropsType<typeof get
         >
           <p>{t('quote')}</p>
         </Quote>
+
+        <Itinerary itinerary={ itinerary }></Itinerary>
         
       </main>
 

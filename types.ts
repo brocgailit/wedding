@@ -1,1 +1,11 @@
-export type ThemeColor = 'primary' | 'secondary' | 'tertiary' | 'light' | 'grey' | 'dark' | 'white' | 'black';
+export type ThemeColor = 
+| 'background-muted' 
+| 'background' 
+| 'black' 
+| 'foreground-muted' 
+| 'foreground'
+| 'grey' 
+| 'primary' 
+| 'secondary' 
+| 'tertiary' 
+| 'white';
