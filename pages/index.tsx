@@ -11,6 +11,7 @@ import Itinerary from '../components/Itinerary'
 
 import itinerary from '../public/locales/itinerary.json';
 import Attendants from '../components/Attendants'
+import Contact from '../components/Contact'
 
 type PathProps = { locale: string }
 
@@ -27,7 +28,7 @@ export const getStaticProps = async ({ locale } : PathProps) => {
 
 function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getStaticProps>) {
 
-  const { locale } = useRouter();
+  // const { locale } = useRouter();
 
   const { t } = useTranslation('common');
 
@@ -76,6 +77,28 @@ function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getSta
         <Itinerary itinerary={ itinerary }></Itinerary>
 
         <Attendants title={t('attendantsTitle')} names={t('attendants')}></Attendants>
+
+        <Contact
+          dayOfContact={{
+            description: t('contactDayOfDescription'),
+            persons: [{
+              name: t('contactDayOfName'),
+              phone: t('contactDayOfPhone')
+            }]
+          }}
+          persons={[
+            {
+              name: t('contact1Name'),
+              phone: t('contact1Phone')
+            },
+            {
+              name: t('contact2Name'),
+              phone: t('contact2Phone')
+            }
+          ]}
+        >
+          {t('contactDescription')}
+        </Contact>
         
       </main>
 
