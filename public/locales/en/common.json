@@ -1,5 +1,8 @@
 {
     "title": "Gailit Wedding",
     "informalGreeting": "Hi!",
-    "brideAndGroom": "Ieva and Broc"
+    "brideAndGroom": "Ieva and Broc",
+    "rsvpVerb": "RSVP",
+    "rsvpUntil": "online before",
+    "moreSoon": "Additional details will be available shortly"
 }

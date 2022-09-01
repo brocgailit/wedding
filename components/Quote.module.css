@@ -1,0 +1,32 @@
+.quote {
+    color: var(--color-dark);
+}
+
+.quote figure {
+    max-width: var(--container-size-large);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+.quote blockquote {
+    margin: 0;
+    text-align: center;
+    font-size: 3em;
+    line-height: 1;
+    font-family: var(--font-family-heading);
+}
+
+.quote figcaption {
+    text-align: right;
+}
+
+.quote figcaption > * {
+    display: block;
+}
+
+.author {
+    font-size: 1.5em;
+}
+.author::before {
+    content: '—';
+}

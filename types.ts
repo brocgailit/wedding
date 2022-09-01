@@ -1,0 +1,1 @@
+export type ThemeColor = 'primary' | 'secondary' | 'tertiary' | 'light' | 'grey' | 'dark' | 'white' | 'black';
