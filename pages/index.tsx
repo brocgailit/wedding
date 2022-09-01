@@ -13,8 +13,7 @@ type PathProps = { locale: string }
 export const getStaticProps = async ({ locale } : PathProps) => ({
   props: {
     ...await serverSideTranslations(locale, ['common']),
-    weddingDate: new Date('2022-10-08').toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' }),
-    rsvpDeadline: new Date('2022-09-17').toLocaleDateString(locale, { month: 'long', day: 'numeric' }),
+    weddingDate: new Date('2022-10-08').toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' })
   },
 })
 
@@ -53,7 +52,7 @@ function Home({ weddingDate, rsvpDeadline } : InferGetStaticPropsType<typeof get
               </Button>
 
               <span style={{ fontSize: '0.75em', fontStyle: 'italic' }}>
-                {t('rsvpVerb')} {` ${t('rsvpUntil')} ${rsvpDeadline} `}
+                {` ${t('rsvpDeadline')} `}
               </span>
               </>
           }}

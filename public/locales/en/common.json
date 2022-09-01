@@ -3,6 +3,7 @@
     "informalGreeting": "Hi!",
     "brideAndGroom": "Ieva and Broc",
     "rsvpVerb": "RSVP",
-    "rsvpUntil": "online before",
-    "moreSoon": "Additional details will be available shortly"
+    "rsvpDeadline": "RSVP online before September 17th",
+    "moreSoon": "Additional details will be available shortly",
+    "quote": "With you, I call every place my home"
 }
