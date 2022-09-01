@@ -8,19 +8,18 @@ import Hero from '../components/Hero'
 import Button from '../components/Button'
 import Quote from '../components/Quote'
 import Itinerary from '../components/Itinerary'
-import { server } from '../config';
 
+import itinerary from '../public/locales/itinerary.json';
 
 type PathProps = { locale: string }
 
 export const getStaticProps = async ({ locale } : PathProps) => {
-  const itinerary = await fetch(`${server}/locales/${locale}/itinerary.json`).then(res => res.json()); 
 
   return {
     props: {
       ...await serverSideTranslations(locale, ['common']),
       weddingDate: new Date('2022-10-08').toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' }),
-      itinerary
+      itinerary: itinerary[locale as keyof typeof itinerary]
     }
   }
 };
