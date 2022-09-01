@@ -15,13 +15,12 @@ type ItineraryProps = {
 }
 
 const Location = ({ name, address }: ItineraryLocation) =>
-    
-        <address className={styles.address}>
-            <h4>{name}</h4>
-            <a href={`https://maps.google.com?q=${address}`} target="_blank" rel="noreferrer">
-                {address}
-            </a>
-        </address>
+    <address className={styles.address}>
+        <h4>{name}</h4>
+        <a href={`https://maps.google.com?q=${address}`} target="_blank" rel="noreferrer">
+            {address}
+        </a>
+    </address>
 
 const Itinerary = ({ title, itinerary = [] }: ItineraryProps) =>
     <div className={styles.itinerary}>
