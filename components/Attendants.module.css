@@ -1,0 +1,33 @@
+.attendants {
+    position: relative;
+    text-align: center;
+}
+
+/* .attendants::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background-muted);
+    z-index: -1;
+    opacity: 0.35;
+} */
+
+.container {
+    padding: var(--container-padding);
+    max-width: var(--container-size-large);
+    margin: 3em auto;
+}
+
+.attendants h4 {
+    font-family: var(--font-family-subheading);
+    color: var(--color-grey);
+}
+
+.names {
+    color: var(--color-foreground-muted);
+    font-family: var(--font-family-heading);
+    font-size: clamp(1.5rem, 4vw, 4rem);
+}

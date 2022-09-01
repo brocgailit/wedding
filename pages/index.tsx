@@ -10,6 +10,7 @@ import Quote from '../components/Quote'
 import Itinerary from '../components/Itinerary'
 
 import itinerary from '../public/locales/itinerary.json';
+import Attendants from '../components/Attendants'
 
 type PathProps = { locale: string }
 
@@ -73,6 +74,8 @@ function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getSta
         </Quote>
 
         <Itinerary itinerary={ itinerary }></Itinerary>
+
+        <Attendants title={t('attendantsTitle')} names={t('attendants')}></Attendants>
         
       </main>
 
