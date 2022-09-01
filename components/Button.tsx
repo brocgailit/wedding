@@ -8,8 +8,9 @@ type ButtonProps = Partial<{
     color: ThemeColor,
     children: React.ReactNode
     href: string,
+    rel: string,
     target: string
-}> & React.HTMLAttributes<HTMLOrSVGElement>
+}> & React.HTMLAttributes<HTMLAnchorElement | HTMLButtonElement>
 
 const Button: FunctionComponent<ButtonProps> = ({
     background,

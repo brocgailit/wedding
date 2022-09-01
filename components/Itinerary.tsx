@@ -6,7 +6,7 @@ type ItineraryLocation = {
 }
 
 type ItineraryProps = {
-    title: string,
+    title?: string,
     itinerary: {
         time: string,
         title: string
@@ -18,7 +18,7 @@ const Location = ({ name, address }: ItineraryLocation) =>
     
         <address className={styles.address}>
             <h4>{name}</h4>
-            <a href={`https://maps.google.com?q=${address}`} target="_blank">
+            <a href={`https://maps.google.com?q=${address}`} target="_blank" rel="noreferrer">
                 {address}
             </a>
         </address>

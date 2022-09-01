@@ -54,6 +54,7 @@ function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getSta
                 backgroundColor="primary"
                 href="https://forms.gle/qHFxkTFkQK1McYyKA"
                 target="_blank"
+                rel="noopener"
               >
                 {t('rsvpVerb')}
               </Button>
