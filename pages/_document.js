@@ -33,13 +33,6 @@ class MyDocument extends Document {
             src="https://www.statcounter.com/counter/counter.js"
             async
           ></script>
-          <noscript>
-            <div class="statcounter">
-              <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
-                <img class="statcounter" src="https://c.statcounter.com/12790678/0/b4adeb23/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade" />
-              </a>
-            </div>
-          </noscript>
         </body>
       </Html>
     )
