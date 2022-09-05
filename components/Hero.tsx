@@ -11,7 +11,8 @@ type HeroProps = Partial<{
     children: {
         heading?: React.ReactNode,
         subheading?: React.ReactNode
-        cta?: React.ReactNode
+        cta?: React.ReactNode,
+        body?: React.ReactNode
     }
 }
 
@@ -21,7 +22,7 @@ const Hero = ({ background, children, backgroundColor = 'foreground', color = 'w
         '--hero-color-foreground': `var(--color-${color})`
     }  as React.CSSProperties;
 
-    const { heading, subheading, cta } = children;
+    const { heading, subheading, cta, body } = children;
 
     return <div className={styles.host} style={style}>
         {background && <Image className={styles.background} src={background} layout="fill"></Image>}
@@ -31,6 +32,11 @@ const Hero = ({ background, children, backgroundColor = 'foreground', color = 'w
                 <h1>{heading}</h1>
                 <h2>{subheading}</h2>
             </header>
+            {body && (
+                <div className={styles.body}>
+                    {body}
+                </div>
+            )}
             <div className={styles.cta}>
                 {cta}
             </div>
