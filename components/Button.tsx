@@ -9,7 +9,8 @@ type ButtonProps = Partial<{
     children: React.ReactNode
     href: string,
     rel: string,
-    target: string
+    target: string,
+    type: 'button' | 'submit' | 'reset' | undefined
 }> & React.HTMLAttributes<HTMLAnchorElement | HTMLButtonElement>
 
 const Button: FunctionComponent<ButtonProps> = ({

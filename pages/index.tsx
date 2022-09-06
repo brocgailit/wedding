@@ -13,6 +13,8 @@ import Attendants from '../components/Attendants'
 import Contact from '../components/Contact'
 import CountDownTimer from '../components/CountdownTimer'
 import { useRouter } from 'next/router'
+import Layout from '../components/Layout'
+import PaypalDonateButton from '../components/PaypalDonateButton'
 
 type PathProps = { locale: string }
 
@@ -77,6 +79,22 @@ function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getSta
         <Itinerary itinerary={ itinerary }></Itinerary>
 
         <Attendants title={t('attendantsTitle')} names={t('attendants')}></Attendants>
+
+        {
+          locale === 'en' &&
+          <Layout
+            backgroundColor='background-muted'
+            backgroundOpacity={0.33}
+            color="foreground-muted"
+          >
+            <h3>We understand if you can't make it to our celebration</h3>
+            For many friends and family abroad, traveling to Latvia is understandably difficult. If you'd still like to provide a gift, please kindly donate to our honeymoon fund.
+            <PaypalDonateButton
+              businessId="7SDHN3EHDYPLQ"
+              message="We understand if you can't make it to our celebration! If you'd like to provide a gift, please donate to our honeymoon fund. "
+            ></PaypalDonateButton>
+          </Layout>
+        }
 
         <Contact
           dayOfContact={{
