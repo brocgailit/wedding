@@ -93,8 +93,8 @@ function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getSta
             backgroundOpacity={0.33}
             color="foreground-muted"
           >
-            <h3>We understand if you can't make it to our celebration</h3>
-            For many friends and family abroad, traveling to Latvia is understandably difficult. If you'd still like to provide a gift, please kindly donate to our honeymoon fund.
+            <h3>We understand if you cannot make it to our celebration</h3>
+            For many friends and family abroad, traveling to Latvia is understandably difficult. If you would still like to provide a gift, please kindly donate to our honeymoon fund.
             <PaypalDonateButton
               businessId="7SDHN3EHDYPLQ"
               message="We understand if you can't make it to our celebration! If you'd like to provide a gift, please donate to our honeymoon fund. "
