@@ -1,4 +1,4 @@
-import { GetServerSideProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next'
+import { GetServerSideProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -18,10 +18,16 @@ import PaypalDonateButton from '../components/PaypalDonateButton'
 
 type PathProps = { locale: string }
 
-export const getServerSideProps: GetServerSideProps = async ({ req, locale = 'en' }) => {
+// export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+//   return {
+//     props: { location: req.headers['x-vercel-ip-country'] }
+//   }
+// }
+
+export const getStaticProps = async ({ locale } : PathProps) => {
+
   return {
     props: {
-      location: req.headers['x-vercel-ip-country'] || 'US',
       ...await serverSideTranslations(locale, ['common']),
       weddingDate: new Date('2022-10-08').toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' }),
       itinerary: itinerary[locale as keyof typeof itinerary]
@@ -29,13 +35,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req, locale = 'en
   }
 };
 
-function Home({ weddingDate, itinerary, location } :InferGetServerSidePropsType<typeof getServerSideProps>) {
+function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getStaticProps>) {
 
   const { t } = useTranslation('common');
 
   const { locale } = useRouter();
-
-  console.log(location);
 
   return (
     <>
@@ -89,8 +93,8 @@ function Home({ weddingDate, itinerary, location } :InferGetServerSidePropsType<
             backgroundOpacity={0.33}
             color="foreground-muted"
           >
-            <h3>We understand if you cannott make it to our celebration</h3>
-            For many friends and family abroad, traveling to Latvia is understandably difficult. If you would still like to provide a gift, please kindly donate to our honeymoon fund.
+            <h3>We understand if you can't make it to our celebration</h3>
+            For many friends and family abroad, traveling to Latvia is understandably difficult. If you'd still like to provide a gift, please kindly donate to our honeymoon fund.
             <PaypalDonateButton
               businessId="7SDHN3EHDYPLQ"
               message="We understand if you can't make it to our celebration! If you'd like to provide a gift, please donate to our honeymoon fund. "
