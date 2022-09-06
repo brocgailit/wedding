@@ -1,4 +1,4 @@
-import { InferGetStaticPropsType } from 'next'
+import { GetServerSideProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -18,10 +18,10 @@ import PaypalDonateButton from '../components/PaypalDonateButton'
 
 type PathProps = { locale: string }
 
-export const getStaticProps = async ({ locale } : PathProps) => {
-
+export const getServerSideProps: GetServerSideProps = async ({ req, locale = 'en' }) => {
   return {
     props: {
+      location: req.headers['x-vercel-ip-country'] || 'US',
       ...await serverSideTranslations(locale, ['common']),
       weddingDate: new Date('2022-10-08').toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' }),
       itinerary: itinerary[locale as keyof typeof itinerary]
@@ -29,11 +29,13 @@ export const getStaticProps = async ({ locale } : PathProps) => {
   }
 };
 
-function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getStaticProps>) {
+function Home({ weddingDate, itinerary, location } :InferGetServerSidePropsType<typeof getServerSideProps>) {
 
   const { t } = useTranslation('common');
 
   const { locale } = useRouter();
+
+  console.log(location);
 
   return (
     <>
