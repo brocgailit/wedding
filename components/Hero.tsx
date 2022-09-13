@@ -40,7 +40,7 @@ const Hero = ({ background, children, backgroundColor = 'foreground', color = 'w
             <div className={styles.cta}>
                 {cta}
             </div>
-        </div>;
+        </div>
     </div>
 }
 

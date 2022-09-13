@@ -128,7 +128,7 @@ function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getSta
 
       <footer className={styles.footer}>
         <CountDownTimer
-          targetDate={new Date('2022-10-08 09:00:00:00Z')}
+          targetDate={new Date('2022-10-08 09:00:00Z')}
           locale={locale}
         ></CountDownTimer>
       </footer>
