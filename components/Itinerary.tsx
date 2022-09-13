@@ -2,7 +2,8 @@ import styles from './Itinerary.module.css';
 
 type ItineraryLocation = {
     name?: string,
-    address: string
+    address: string,
+    url?: string
 }
 
 type ItineraryProps = {
@@ -14,10 +15,10 @@ type ItineraryProps = {
     }[]
 }
 
-const Location = ({ name, address }: ItineraryLocation) =>
+const Location = ({ name, address, url }: ItineraryLocation) =>
     <address className={styles.address}>
         <h4>{name}</h4>
-        <a href={`https://maps.google.com?q=${address}`} target="_blank" rel="noreferrer">
+        <a href={url || `https://maps.google.com?q=${address}`} target="_blank" rel="noreferrer">
             {address}
         </a>
     </address>
