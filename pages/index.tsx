@@ -55,23 +55,7 @@ function Home({ weddingDate, itinerary } : InferGetStaticPropsType<typeof getSta
         >
           {{
             heading: t('brideAndGroom'),
-            subheading: <>{weddingDate} &bull; Sigulda</>,
-            cta:
-              <>
-              <Button
-                style={{ fontSize: '1.85em' }}
-                backgroundColor="primary"
-                href="https://forms.gle/qHFxkTFkQK1McYyKA"
-                target="_blank"
-                rel="noopener"
-              >
-                {t('rsvpVerb')}
-              </Button>
-
-              <span style={{ fontSize: '0.75em', fontStyle: 'italic' }}>
-                {` ${t('rsvpDeadline')} `}
-              </span>
-              </>
+            subheading: <>{weddingDate} &bull; Sigulda</>
           }}
         </Hero>
         <Quote

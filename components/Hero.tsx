@@ -37,9 +37,11 @@ const Hero = ({ background, children, backgroundColor = 'foreground', color = 'w
                     {body}
                 </div>
             )}
-            <div className={styles.cta}>
-                {cta}
-            </div>
+            { !!cta &&
+                <div className={styles.cta}>
+                    {cta}
+                </div>
+            }
         </div>
     </div>
 }
